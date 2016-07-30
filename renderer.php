@@ -14,15 +14,6 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-/**
- * format_board
- *
- * @package    format_board
- * @author     Rodrigo Brandão (rodrigobrandao.com.br)
- * @copyright  2016 Rodrigo Brandão
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
-
 defined('MOODLE_INTERNAL') || die();
 
 require_once($CFG->dirroot.'/course/format/topics/renderer.php');
@@ -30,12 +21,18 @@ require_once($CFG->dirroot.'/course/format/topics/renderer.php');
 /**
  * format_board_renderer
  *
+ * @package    format_board
+ * @author     Rodrigo Brandão (rodrigobrandao.com.br)
+ * @copyright  2016 Rodrigo Brandão
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class format_board_renderer extends format_topics_renderer {
     
     /**
      * start_section_list
      *
+     * @param int $i
+     * @return string
      */
     protected function start_section_list($i = 0) {
         global $course;
@@ -53,6 +50,11 @@ class format_board_renderer extends format_topics_renderer {
     /**
      * section_header
      *
+     * @param stdclass $section
+     * @param stdclass $course
+     * @param bool $onsectionpage
+     * @param int $sectionreturn
+     * @return string
      */
     protected function section_header($section, $course, $onsectionpage, $sectionreturn = null) {
         global $PAGE;
@@ -95,6 +97,11 @@ class format_board_renderer extends format_topics_renderer {
     /**
      * print_multiple_section_page
      *
+     * @param stdclass $course
+     * @param array $sections (argument not used)
+     * @param array $mods (argument not used)
+     * @param array $modnames (argument not used)
+     * @param array $modnamesused (argument not used)
      */
     public function print_multiple_section_page($course, $sections, $mods, $modnames, $modnamesused) {
         global $PAGE;

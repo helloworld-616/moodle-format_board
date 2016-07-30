@@ -28,5 +28,5 @@ defined('MOODLE_INTERNAL') || die();
 $plugin->requires = 2014101000; /* moodle 2.8.0 */
 $plugin->component = 'format_board';
 $plugin->maturity = MATURITY_ALPHA;
-$plugin->release = '(Build: 2016072700)';
-$plugin->version = 2016072700;
+$plugin->release = '(Build: 2016073000)';
+$plugin->version = 2016073000;
