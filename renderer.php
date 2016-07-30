@@ -117,7 +117,7 @@ class format_board_renderer extends format_topics_renderer {
                 .course-content ul.board li.section.main.current h3.sectionname { color: '.$course->color.'; } 
                 .course-content ul.board.blocks li.section.main h3.sectionname { color: '.$course->color.'; }
                 .course-content ul.board.blocks li.section.main.current { border-color: '.$course->color.'; }
-                .course-content ul.board.blocks li.section.main.current h3.sectionname { background: '.$course->color.'; color: #fff; }
+                .course-content ul.board.blocks li.section.main.current h3.sectionname { background-color: '.$course->color.'; color: #fff; }
                 ';
                 echo html_writer::tag('style', $css);
             }
