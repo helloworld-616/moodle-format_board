@@ -72,9 +72,6 @@
     list-style: none;
     width: calc(100% - 40px);
 }
-.course-content ul.board li#section-0 {
-    margin: 0;
-}
 .course-content ul.board li.section.main h3.sectionname {
     padding: 0 0 5px 0;
     margin: 0;
