@@ -52,7 +52,7 @@
 .path-course-view .board .completionprogress {
     display: none !important;
 }
-.board .section .side.left, .section .side.right {
+.board .section .side.left, .board .section .side.right {
     display: none;
 }
 .board .editing .section .side.left, .board .editing .section .side.right {
