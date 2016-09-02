@@ -99,7 +99,7 @@
     width: calc(100% - 16px);
 }
 .course-content ul.board.blocks li.section.main.current {
-    border-width: 3px !important;
+    border-width: 3px;
     border-color: #0070a8;
     width: calc(100% - 21px);
 }
