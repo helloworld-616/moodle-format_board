@@ -86,8 +86,6 @@
 .course-content ul.board li.section.main.current {
     background: none;
 }
-
-/* blocks - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 .course-content ul.board.blocks li.section.main {
     background-color: #fff;
     border-style: solid;
