@@ -55,7 +55,7 @@
 .board .section .side.left, .board .section .side.right {
     display: none;
 }
-.board .editing .section .side.left, .board .editing .section .side.right {
+.editing .board .section .side.left, .editing .board .section .side.right {
     display: inline-block;
 }
 .board .section li.activity {
