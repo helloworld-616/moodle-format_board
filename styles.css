@@ -49,19 +49,19 @@
 .course-content ul.board.width25 {
     width: 25%;
 }
-.path-course-view .completionprogress {
+.path-course-view .board .completionprogress {
     display: none !important;
 }
-.section .side.left, .section .side.right {
+.board .section .side.left, .board .section .side.right {
     display: none;
 }
-.editing .section .side.left, .editing .section .side.right {
+.editing .board .section .side.left, .editing .board .section .side.right {
     display: inline-block;
 }
-.section li.activity {
+.board .section li.activity {
     padding: 5px 0 !important;
 }
-.section .activity .mod-indent-outer {
+.board .section .activity .mod-indent-outer {
     padding: 0 !important;
 }
 .course-content ul.board li.section.main {
