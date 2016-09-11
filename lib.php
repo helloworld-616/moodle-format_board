@@ -1,4 +1,5 @@
 <?php
+
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -14,10 +15,6 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-defined('MOODLE_INTERNAL') || die();
-
-require_once($CFG->dirroot. '/course/format/topics/lib.php');
-
 /**
  * format_board
  *
@@ -26,13 +23,20 @@ require_once($CFG->dirroot. '/course/format/topics/lib.php');
  * @copyright  2016 Rodrigo Brandão
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+
+defined('MOODLE_INTERNAL') || die();
+
+require_once($CFG->dirroot. '/course/format/topics/lib.php');
+
+/**
+ * format_board
+ *
+ */
 class format_board extends format_topics {
 
     /**
      * course_format_options
      *
-     * @param bool $foreditform
-     * @return array
      */
     public function course_format_options($foreditform = false) {
         global $PAGE;
@@ -145,9 +149,6 @@ class format_board extends format_topics {
     /**
      * update_course_format_options
      *
-     * @param stdclass|array $data
-     * @param stdClass $oldcourse
-     * @return bool
      */
     public function update_course_format_options($data, $oldcourse = null) {
         global $DB;
@@ -180,12 +181,9 @@ class format_board extends format_topics {
         return $changed;
     }
 
-    /**
+  /**
      * get_view_url
      *
-     * @param int|stdclass $section
-     * @param array $options 
-     * @return null|moodle_url
      */
     public function get_view_url($section, $options = array()) {
         global $CFG;

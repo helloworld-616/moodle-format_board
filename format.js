@@ -26,6 +26,10 @@ M.course = M.course || {};
 
 M.course.format = M.course.format || {};
 
+/**
+ * get_config
+ *
+ */
 M.course.format.get_config = function() {
     return {
         container_node : 'ul',
@@ -35,6 +39,10 @@ M.course.format.get_config = function() {
     };
 };
 
+/**
+ * swap_sections
+ *
+ */
 M.course.format.swap_sections = function(Y, node1, node2) {
     var CSS = {
         COURSECONTENT : 'course-content',
@@ -44,6 +52,10 @@ M.course.format.swap_sections = function(Y, node1, node2) {
     sectionlist.item(node1).one('.'+CSS.SECTIONADDMENUS).swap(sectionlist.item(node2).one('.'+CSS.SECTIONADDMENUS));
 };
 
+/**
+ * process_sections
+ *
+ */
 M.course.format.process_sections = function(Y, sectionlist, response, sectionfrom, sectionto) {
     var CSS = {
         SECTIONNAME : 'sectionname'
