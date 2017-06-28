@@ -20,7 +20,7 @@
  *
  * @package    format_board
  * @author     Rodrigo Brandão (rodrigobrandao.com.br)
- * @copyright  2016 Rodrigo Brandão
+ * @copyright  2017 Rodrigo Brandão
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -41,8 +41,12 @@ class format_board extends format_topics {
     public function course_format_options($foreditform = false) {
         global $PAGE;
         static $courseformatoptions = false;
+        $courseconfig = get_config('moodlecourse');
+        $max = $courseconfig->maxsections;
+        if (!isset($max) || !is_numeric($max)) {
+            $max = 52;
+        }
         if ($courseformatoptions === false) {
-            $courseconfig = get_config('moodlecourse');
             $courseformatoptions['numsections'] = array(
                 'default' => $courseconfig->numsections,
                 'type' => PARAM_INT,
@@ -55,7 +59,7 @@ class format_board extends format_topics {
                 'default' => get_config('format_board', 'sectionlayout'),
                 'type' => PARAM_INT,
             );
-            for ($i = 1; $i <= 15; $i++) {
+            for ($i = 1; $i <= $max; $i++) {
                 $courseformatoptions['widthcol'.$i] = array(
                     'default' => get_config('format_board', 'widthcol'.$i),
                     'type' => PARAM_INT,
@@ -71,11 +75,6 @@ class format_board extends format_topics {
             );
         }
         if ($foreditform && !isset($courseformatoptions['coursedisplay']['label'])) {
-            $courseconfig = get_config('moodlecourse');
-            $max = $courseconfig->maxsections;
-            if (!isset($max) || !is_numeric($max)) {
-                $max = 52;
-            }
             $sectionmenu = array();
             for ($i = 0; $i <= $max; $i++) {
                 $sectionmenu[$i] = "$i";
@@ -110,7 +109,7 @@ class format_board extends format_topics {
                     ),
                 ),
             );
-            for ($i = 1; $i <= 15; $i++) {
+            for ($i = 1; $i <= $max; $i++) {
                 $courseformatoptionsedit['widthcol'.$i] = array(
                     'label' => get_string('widthcol', 'format_board').' '.$i,
                     'help' => 'widthcol',
@@ -161,7 +160,7 @@ class format_board extends format_topics {
                     if (array_key_exists($key, $oldcourse))
                         $data[$key] = $oldcourse[$key];
                     else if ($key === 'numsections') {
-                        $maxsection = $DB->get_field_sql('SELECT max(section) from {course_sections} 
+                        $maxsection = $DB->get_field_sql('SELECT max(section) from {course_sections}
                             WHERE course = ?', array($this->courseid));
                         if ($maxsection)
                             $data['numsections'] = $maxsection;

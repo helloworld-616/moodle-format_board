@@ -20,7 +20,7 @@
  *
  * @package    format_board
  * @author     Rodrigo Brandão (rodrigobrandao.com.br)
- * @copyright  2016 Rodrigo Brandão
+ * @copyright  2017 Rodrigo Brandão
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -43,10 +43,10 @@ $string['yes'] = 'Yes';
 $string['no'] = 'No';
 $string['sectionlayout'] = 'Sections layout';
 $string['sectionlayout_help'] = 'Set the theme that the sections should be displayed:<br><br>
-<strong>Clean</strong><br> 
+<strong>Clean</strong><br>
 Is a theme that will display the sections without adding borders or colors. The sections have a margin of 40px.<br><br>
 <strong>Blocks</strong><br>
-Is a theme that will display the sections within blocks with title and stylized borders. 
+Is a theme that will display the sections within blocks with title and stylized borders.
 The section summary have 0px of spacing relative to the edge, that can be used images to ilustrate the top of the block.';
 $string['none'] = 'Clean';
 $string['blocks'] = 'Blocks';

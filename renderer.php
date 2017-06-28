@@ -20,7 +20,7 @@
  *
  * @package    format_board
  * @author     Rodrigo Brandão (rodrigobrandao.com.br)
- * @copyright  2016 Rodrigo Brandão
+ * @copyright  2017 Rodrigo Brandão
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -33,7 +33,7 @@ require_once($CFG->dirroot.'/course/format/topics/renderer.php');
  *
  */
 class format_board_renderer extends format_topics_renderer {
-    
+
     /**
      * start_section_list
      *
@@ -67,7 +67,7 @@ class format_board_renderer extends format_topics_renderer {
                 $sectionstyle = ' current';
             }
         }
-        $o.= html_writer::start_tag('li', array('id' => 'section-'.$section->section, 
+        $o.= html_writer::start_tag('li', array('id' => 'section-'.$section->section,
             'class' => 'section main clearfix'.$sectionstyle, 'role'=>'region', 'aria-label'=> get_section_name($course, $section)));
         $o .= html_writer::tag('span', $this->section_title($section, $course), array('class' => 'hidden sectionname'));
         $leftcontent = $this->section_left_content($section, $course, $onsectionpage);
@@ -106,7 +106,9 @@ class format_board_renderer extends format_topics_renderer {
         $completioninfo = new completion_info($course);
         $cont = 1;
         $currentcol = 1;
-        for ($i = 1; $i <= 8; $i++) {
+        $courseconfig = get_config('moodlecourse');
+        $max = $courseconfig->maxsections;
+        for ($i = 1; $i <= $max; $i++) {
             $numtopicscol[$i] = $course->{'numsectionscol'.$i};
         }
         if (isset($course->color)) {
@@ -115,7 +117,7 @@ class format_board_renderer extends format_topics_renderer {
             if (is_numeric('0x'.$course->color)) {
                 $course->color = '#'.$course->color;
                 $css = '
-                .course-content ul.board li.section.main.current h3.sectionname { color: '.$course->color.'; } 
+                .course-content ul.board li.section.main.current h3.sectionname { color: '.$course->color.'; }
                 .course-content ul.board.blocks li.section.main h3.sectionname { color: '.$course->color.'; }
                 .course-content ul.board.blocks li.section.main.current { border-color: '.$course->color.'; }
                 .course-content ul.board.blocks li.section.main.current h3.sectionname { background: '.$course->color.'; color: #fff; }
